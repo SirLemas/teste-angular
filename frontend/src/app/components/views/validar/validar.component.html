@@ -1,1 +1,31 @@
-<p>validar works!</p>
+<form class="main-form">
+  <div class="title">
+    <h1>Validar Colaborador</h1>
+  </div>
+
+  <div class="fields">
+    <mat-form-field class="form">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="colaborador.nome" name="colaborador[nome]" placeholder="Digite seu nome" disabled/>
+    </mat-form-field>
+    <mat-form-field class="form">
+      <mat-label>Email</mat-label>
+      <input matInput type="text"[(ngModel)]="colaborador.email" name="colaborador[email]" placeholder="Digite seu email, ex: teste@gmail.com" disabled/>
+    </mat-form-field>
+    <mat-form-field class="form">
+      <mat-label>CPF</mat-label>
+      <input matInput type="text" [(ngModel)]="colaborador.cpf" name="colaborador[cpf]" placeholder="Ex: 999.999.999-99" disabled/>
+    </mat-form-field>
+    <mat-form-field class="form">
+      <mat-label>Celular</mat-label>
+      <input matInput type="text" [(ngModel)]="colaborador.celular" name="colaborador[celular]" placeholder="Ex: (xx) xxxxx-xxxx" disabled/>
+    </mat-form-field>
+      <mat-form-field appearance="fill" class="form">
+        <mat-label>Conhecimentos</mat-label>
+        <mat-select multiple disabled>
+          <mat-option *ngFor="let conhecimento of conhecimentosList" [value]="conhecimento">{{conhecimento}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" class="button-submit" (click)="validar()">Validar</button>
+</form>

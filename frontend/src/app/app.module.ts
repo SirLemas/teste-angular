@@ -14,6 +14,16 @@ import { RegistrarComponent } from './components/views/registrar/registrar.compo
 import { ValidarComponent } from './components/views/validar/validar.component';
 
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+
 
 
 
@@ -34,6 +44,12 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatTableModule,
     HttpClientModule,
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

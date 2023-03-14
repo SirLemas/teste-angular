@@ -22,9 +22,15 @@
         <th mat-header-cell *matHeaderCellDef> CPF </th>
         <td mat-cell *matCellDef="let row">{{ row.cpf }}</td>
       </ng-container>
+      <ng-container matColumnDef="validado">
+        <th mat-header-cell *matHeaderCellDef> Validado </th>
+        <td mat-cell *matCellDef="let row">{{ row.validado ? 'Sim' : 'Não'}}</td>
+      </ng-container>
       <ng-container matColumnDef="acoes">
-        <th mat-header-cell *matHeaderCellDef> Ações </th>
-        <td mat-cell *matCellDef="let row"></td>
+        <th class="mat-header" mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let row">
+            <a class="button-style"  mat-stroked-button (click)="validarColaborador(row.nome, row.id)">Validar</a>
+        </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

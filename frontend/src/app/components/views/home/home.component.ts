@@ -1,6 +1,7 @@
 import { HomeService } from './home.service';
 import { Component } from '@angular/core';
 import { Registro } from './registro.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,9 @@ export class HomeComponent {
 
   registros: Registro[] = [];
 
-  displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'email', 'cpf', 'validado', 'acoes'];
 
-  constructor(private service: HomeService) { }
+  constructor(private service: HomeService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -24,6 +25,10 @@ export class HomeComponent {
       console.log(resposta);
       this.registros = resposta;
     })
+  }
+
+  validarColaborador(colaborador:String, id:String) {
+    this.router.navigate([`${colaborador.replace(/\s/g, '')}/validar/${id}`]);
   }
 
 

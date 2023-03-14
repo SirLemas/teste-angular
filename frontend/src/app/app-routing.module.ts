@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: "registros", component: HomeComponent },
-  { path: ":nomecolaborador/validar", component: ValidarComponent},
+  { path: ":nomecolaborador/validar/:id", component: ValidarComponent},
   { path: ":nomecolaborador/registrar", component: RegistrarComponent}
 ];
 

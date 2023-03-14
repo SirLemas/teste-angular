@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+}
+
+.form {
+  width: 80%;
+}
+
+.fields {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-form {
+  text-align: center;
+}
